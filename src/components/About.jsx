@@ -11,26 +11,26 @@ import { fadeIn } from '../variants';
     });
     return (
       <section className='section' id='about'>
-        <div className="container mx-auto">
+        <div className="container mx-auto h-auto">
 
           <div 
           
           
-          className='flex flex-col gap-y-10 lg:flex-row justify-center items-center  lg:gap-x-20 lg:gap-y-0 h-screen'>
+          className='flex-1 flex flex-col gap-y-0 lg:flex-row justify-center items-center  lg:gap-x-20 lg:gap-y-0 h-screen'>
 
             <motion.div
             variants={fadeIn('right', 0.3)}
             initial='hidden'
             whileInView={'show'}
             viewport={{once: false, amount:0.3}}
-            className='flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top'></motion.div>
+            className='flex-1 bg-about bg-contain bg-no-repeat lg:h-[640px] mix-blend-lighten bg-top'></motion.div>
 
             <motion.div 
             variants={fadeIn('left', 0.3)}
             initial='hidden'
             whileInView={'show'}
             viewport={{once: false, amount:0.3}}
-            className='flex-1'>
+            className='flex-1 lg:mb-0 mb-20'>
               <h2 className='h2 text-accent'>
                 About me
               </h2>
@@ -40,9 +40,9 @@ import { fadeIn } from '../variants';
               <p className='mb-6'>
               I am a passionate Software developer with a keen eye for creating visually appealing and intuitive user interfaces. With a strong foundation in HTML, CSS, and JavaScript.
               </p>
-              <div className='flex items-center gap-x-6 lg:gap-x-10 '>
+              <div className='flex items-center gap-x-6 lg:gap-x-10 mt-5 '>
                 <div>
-                  <div ref={ref} className='text-[40px] font-tertiary text-gradient mb-2'>
+                  <div ref={ref} className='text-[40px] font-tertiary text-gradient'>
                     
                      {inView ? <CountUp start={0} end={8} duration={3} /> : null}
                       

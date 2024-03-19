@@ -18,7 +18,8 @@ const Work = () => {
             variants={fadeIn('up',0.5)}
             initial='hidden'
             whileInView={'show'}
-            viewport={{ once: false, amount: 0.7}}className=''>
+            viewport={{ once: false, amount: 0.7}}
+            className=''>
 
               <h2 className='h2 leading-tight text-accent'>
                 My Latest <br />

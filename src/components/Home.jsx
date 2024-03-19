@@ -2,10 +2,11 @@ import React from 'react';
 import Images from '../assets/avatar.svg';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 import { FaDribbble } from 'react-icons/fa';
-import {TypeAnimation} from 'react-type-animation'
-;
+import {TypeAnimation} from 'react-type-animation';
 import {motion} from 'framer-motion';
 import {fadeIn} from '../variants';
+// import { BobAfwataResume_3_2 } from 'public/asset/Bob Afwata Resume_3_2.pdf'
+
 
 const Home = () => {
   return (
@@ -55,13 +56,17 @@ const Home = () => {
               Transforming visionary concepts into tangible human-centered solutions with the power of cutting-edge technology is my passion.
               </motion.p>
 
-              <motion.div 
+              <motion.div  
               variants={fadeIn('down',0.6)}
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: false, amount: 0.7}}
               className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
-                <button className='btn btn-lg'>Download CV</button>
+
+                <a href='Bob Afwata Resume_3_2.pdf' download={'Bob Afwata Resume_3_2(3).pdf'}>
+                <button  className='btn btn-lg'>Download CV</button> 
+                </a>
+
                 <a href='#' className='text-gradient btn-link'>
                  My Portfolio 
                 </a>
@@ -97,7 +102,7 @@ const Home = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Home;
