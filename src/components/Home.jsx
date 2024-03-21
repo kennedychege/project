@@ -1,14 +1,27 @@
 import React from 'react';
 import Images from '../assets/avatar.svg';
-import { FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaDribbble } from 'react-icons/fa';
 import {TypeAnimation} from 'react-type-animation';
 import {motion} from 'framer-motion';
 import {fadeIn} from '../variants';
-// import { BobAfwataResume_3_2 } from 'public/asset/Bob Afwata Resume_3_2.pdf'
+//import { BobAfwataResume_3_2 } from 'public/asset/Bob Afwata Resume_3_2.pdf'
 
 
 const Home = () => {
+    const onButtonClick = () => {
+      fetch("asset/Bob Afwata Resume_3_2.pdf")
+        .then((response) => {
+          response.blob().then((blob) => {
+            const fileURL = window.URL.createObjectURL(blob);
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download = "Bob Afwata Resume_3_2.pdf";
+            alink.click();
+          });
+        });
+    };
+  
   return (
     <section className='min-h-[85vh] lg:min-h-[78vh] flex items-center' id='home'>
       <div className='container mx-auto'>
@@ -63,9 +76,8 @@ const Home = () => {
               viewport={{ once: false, amount: 0.7}}
               className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
 
-                <a href='Bob Afwata Resume_3_2.pdf' download={'Bob Afwata Resume_3_2(3).pdf'}>
-                <button  className='btn btn-lg'>Download CV</button> 
-                </a>
+                <button onClick={onButtonClick}  className='btn btn-lg'>Download CV</button> 
+               
 
                 <a href='#' className='text-gradient btn-link'>
                  My Portfolio 
@@ -78,15 +90,15 @@ const Home = () => {
               viewport={{ once: false, amount: 0.7}}
               className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
                 <a href='#'>
+                  <FaFacebook />
+                </a>
+
+                <a href='#'>
+                  <FaInstagram />
+                </a>
+
+                <a href='#'>
                   <FaYoutube />
-                </a>
-
-                <a href='#'>
-                  <FaGithub />
-                </a>
-
-                <a href='#'>
-                  <FaDribbble />
                 </a>
               </motion.div>
           </div>
